@@ -1,0 +1,22 @@
+// auth
+export const SET_USER = 'SET_USER'
+export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN'
+export const REMOVE_AUTH_TOKEN = 'REMOVE_AUTH_TOKEN'
+export const PASSWORD_IGNORE = 'PASSWORD_IGNORE'
+
+// app
+export const SET_MENU_COLLAPSE = 'SET_MENU_COLLAPSE'
+export const SET_WINDOW_INNER_WIDTH = 'SET_WINDOW_INNER_WIDTH'
+
+export const SET_TIME_GTE = 'SET_TIME_GTE'
+export const SET_TIME_LTE = 'SET_TIME_LTE'
+
+// chart
+export const SET_MESSAGE_COUNT = 'SET_MESSAGE_COUNT'
+export const SET_WORD_CLOUD = 'SET_WORD_CLOUD'
+export const SET_MESSAGE_COUNT_BY_DAY_OF_WEEK = 'SET_MESSAGE_COUNT_BY_DAY_OF_WEEK'
+export const SET_ACTIVE_DAY = 'SET_ACTIVE_DAY'
+export const SET_IMAGE_COUNT_USER = 'SET_IMAGE_COUNT_USER'
+
+// chart controller
+export const SET_WORD_CLOUD_COUNT = 'SET_WORD_CLOUD_COUNT'

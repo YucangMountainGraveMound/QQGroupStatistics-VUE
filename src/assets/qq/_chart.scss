@@ -1,0 +1,11 @@
+.card-wrapper .chart-card:not(:first-child) {
+  margin-top: 16px;
+}
+
+.card-wrapper .chart-card:last-child {
+  margin-bottom: 16px;
+}
+
+.chart-card {
+  min-width: 800px;
+}
