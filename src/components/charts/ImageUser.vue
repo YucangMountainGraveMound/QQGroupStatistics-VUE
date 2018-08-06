@@ -5,7 +5,8 @@
     <Split v-model="split" style="height: 3600px;">
       <div slot="left" class="image-user-left-panel">
         <img class="image-user-img" v-for="item in imagesUser"
-             :src="'https://qqback.dormon.net/api/image/raw/' + item.key">
+             v-if="item.key"
+             :src="rawAPI + item.key">
       </div>
       <div slot="right">
         <v-chart v-if="!loading" :forceFit="true" :height="height" :data="data" :scale="scale">
@@ -51,6 +52,7 @@
         height: 3600,
         loading: true,
         unWatch: {},
+        rawAPI: process.env.API_ROOT + "image/raw/"
       }
     },
     mounted() {

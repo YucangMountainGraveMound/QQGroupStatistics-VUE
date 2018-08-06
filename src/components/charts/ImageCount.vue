@@ -2,7 +2,7 @@
   <div :style="{width: '100%', minHeight: height}">
     <epic-spinner v-if="loading"></epic-spinner>
     <Alert v-if="!loading">分析依据：统计所有图片数量</Alert>
-    <v-chart v-if="!loading" :force-fit="true" :height="height" :data="data" :scale="scale">
+    <v-chart v-if="!loading" :force-fit="true" :height="height" :data="filteredData" :scale="scale">
       <v-tooltip/>
       <v-series :gemo="seriesOpts.gemo" :position="seriesOpts.position" :size="seriesOpts.size"
                 :color="seriesOpts.color" :shape="seriesOpts.shape" :label="seriesOpts.label"/>
@@ -75,6 +75,12 @@
         loading: false,
         unWatch: {}
       };
+    },
+    computed: {
+      filteredData () {
+        let list = [];
+        return this.data.filter(item => item.name)
+      }
     },
     mounted() {
       let self = this

@@ -51,7 +51,6 @@ export function authGuard(routes) {
  */
 export function guestGuard(routes) {
   return guard(routes, (to, from, next) => {
-    console.log(getStore('token'))
     if (getStore('token')) {
       next({name: 'index'})
     } else {
