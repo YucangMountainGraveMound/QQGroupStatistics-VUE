@@ -47,7 +47,9 @@
         .finally(() => this.loading = false)
 
       this.$store.dispatch('getDict', this.type)
-        .then(res => this.dict = res.data.message.split(','))
+        .then(res => {
+          this.dict = Array.from(new Set(res.data.message.split(',')))
+        })
     },
     methods: {
       handleShowDict() {
