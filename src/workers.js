@@ -40,6 +40,35 @@ export const workerActions = [
       return arr
     }
   }, {
+    message: "average_count_per_user",
+    func: (data) => {
+      let messageCountArr = data.messageCount
+      let activeDayArr = data.activeDay
+
+      let activeDayMap = activeDayArr.reduce((map, item) => {
+        map[item.key] = item.result.value
+        return map
+      }, {})
+
+      let arr = []
+
+      messageCountArr
+        .filter(item => activeDayMap.hasOwnProperty(item.key))
+        .forEach(item => {
+          arr.push({
+            "account": item.key,
+            "消息数量": Math.round(item.doc_count / activeDayMap[item.key]),
+            "图片、表情数量": Math.round(item.image_count.value / activeDayMap[item.key])
+          })
+        })
+
+      arr.sort((a, b) => {
+        return b["消息数量"] - a["消息数量"]
+      })
+
+      return arr
+    }
+  }, {
     message: "message",
     func: (data) => {
       let arr = []

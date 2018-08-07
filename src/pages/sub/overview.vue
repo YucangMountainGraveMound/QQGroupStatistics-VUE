@@ -13,6 +13,12 @@
       </div>
     </Card>
     <Card class="chart-card">
+      <p slot="title">看看这破群谁最水</p>
+      <div class="chart-wrapper">
+        <average-count-per-user></average-count-per-user>
+      </div>
+    </Card>
+    <Card class="chart-card">
       <Dropdown slot="extra" placement="bottom-start" @on-click="handleWordCountCountChanged">
         <Button type="primary">
           词数({{wordCount}})
@@ -37,12 +43,14 @@
 <script>
   import HeatMap from '@/components/charts/HeatMap'
   import CountPerUser from '@/components/charts/CountPerUser'
+  import AverageCountPerUser from '@/components/charts/AverageCountPerUser'
   import WordCloud from '@/components/charts/WordCloud'
 
   export default {
     components: {
       HeatMap,
       CountPerUser,
+      AverageCountPerUser,
       WordCloud
     },
     data() {
