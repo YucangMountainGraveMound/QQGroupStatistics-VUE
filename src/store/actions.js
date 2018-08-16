@@ -18,7 +18,7 @@ export const authLogin = ({commit}, credentials) => {
       })
       .catch(err => {
         setStore('token', '')
-        if (err && err.response.status === 401) {
+        if (err && err.response && err.response.status === 401) {
           reject(new Error('没登录成功啊，检查下账号密码吧'))
         } else {
           reject(err)

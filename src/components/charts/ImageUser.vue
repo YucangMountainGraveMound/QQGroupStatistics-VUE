@@ -4,9 +4,7 @@
     <Alert v-if="!loading">分析依据：统计用户所发某图片数量</Alert>
     <Split v-model="split" style="height: 3600px;">
       <div slot="left" class="image-user-left-panel">
-        <img class="image-user-img" v-for="item in imagesUser"
-             v-if="item.key"
-             :src="rawAPI + item.key">
+        <img class="image-user-img" v-for="item in imagesUser" :src="rawAPI + item.key">
       </div>
       <div slot="right">
         <v-chart v-if="!loading" :forceFit="true" :height="height" :data="data" :scale="scale">

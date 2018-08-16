@@ -8,7 +8,7 @@
     <Content class="auth-page-content">
       <Card class="auth-container">
         <Alert type="error" v-if="error">{{error}}</Alert>
-        <Form ref="loginForm" :model="loginForm" :rules="ruleValidate">
+        <Form @keyup.enter.native="handleLogin" ref="loginForm" :model="loginForm" :rules="ruleValidate">
           <FormItem label="账号" prop="account">
             <Input v-model="loginForm.account" placeholder="请输入账号"/>
           </FormItem>
