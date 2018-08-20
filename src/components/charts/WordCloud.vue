@@ -105,6 +105,7 @@
               self.loading = false
             }
           })
+          .catch(err => this.$Message.error(err.message))
       }
     }
   }

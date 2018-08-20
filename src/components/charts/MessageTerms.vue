@@ -43,13 +43,14 @@
       this.loading = true
       this.$store.dispatch('getMessageTerms', this.type)
         .then(res => this.data = res)
-        .catch(console.log)
+        .catch(err => this.$Message.error(err.message))
         .finally(() => this.loading = false)
 
       this.$store.dispatch('getDict', this.type)
         .then(res => {
           this.dict = Array.from(new Set(res.data.message.split(',')))
         })
+        .catch(err => this.$Message.error(err.message))
     },
     methods: {
       handleShowDict() {

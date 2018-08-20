@@ -24,9 +24,9 @@
         .then(res => {
           self.$workers.postMessage('message_habit', [res.data.buckets])
             .then(res => self.data = res)
-            .catch(console.log)
+            .catch(err => this.$Message.error(err.message))
         })
-        .catch(console.log)
+        .catch(err => this.$Message.error(err.message))
         .finally(() => self.loading = false)
     },
     data() {

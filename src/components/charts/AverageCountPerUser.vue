@@ -33,12 +33,12 @@
       this.$store.dispatch('getMessageCount')
         .then(res => {
           self.$set(self.resources, "messageCount", res)
-        }).catch(err => console.error(err))
+        }).catch(err => this.$Message.error(err.message))
 
       this.$store.dispatch('getActiveDay')
         .then(res => {
           self.$set(self.resources, "activeDay", res)
-        }).catch(err => console.error(err))
+        }).catch(err => this.$Message.error(err.message))
     },
     watch: {
       resources () {
@@ -56,7 +56,7 @@
               })
               self.data = dv.rows
             })
-            .catch(err => console.log(err))
+            .catch(err => this.$Message.error(err.message))
             .finally(() => self.loading = false)
         }
       }

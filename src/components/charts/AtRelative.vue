@@ -51,9 +51,9 @@
               self.edgesData = dv.edges;
               self.nodesData = dv.nodes;
             })
-            .catch(console.log)
+            .catch(err => this.$Message.error(err.message))
         })
-        .catch(console.log)
+        .catch(err => this.$Message.error(err.message))
         .finally(() => self.loading = false)
     },
     data() {

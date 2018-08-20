@@ -86,9 +86,10 @@
             .then(res => {
               self.data = res
             })
-            .catch(e => console.log(e))
+            .catch(err => this.$Message.error(err.message))
             .finally(() => self.loading = false)
         })
+        .catch(err => this.$Message.error(err.message))
     }
   }
 </script>
