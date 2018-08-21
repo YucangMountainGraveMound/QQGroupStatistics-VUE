@@ -1,5 +1,5 @@
 'use strict'
 module.exports = {
   NODE_ENV: '"production"',
-  API_ROOT: '"https://somePordURL/api/"'
+  API_ROOT: '"https://qqback.dormon.net/api/"'
 }

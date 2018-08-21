@@ -9,12 +9,10 @@
   <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico"/>
 
   <script type="text/javascript">
-    function isIE() { //ie?
+    (function () { //ie?
       if (!!window.ActiveXObject || "ActiveXObject" in window)
-        window.location.href = "http://localhost:4000/noie.html"
-    }
-
-    isIE()
+        window.location.href = "noie.html"
+    })()
   </script>
 
 <body>

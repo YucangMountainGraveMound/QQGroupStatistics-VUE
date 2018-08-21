@@ -46,7 +46,7 @@
         start: moment().subtract(ranges - 2, "month").toDate(),
         cellSize: 15,
         range: ranges - 1,
-        legend: [100, 200, 300, 500, 1000],
+        legend: [100, 200, 400, 800],
         highlight: "now",
         tooltip: true,
         subDomainTitleFormat: {

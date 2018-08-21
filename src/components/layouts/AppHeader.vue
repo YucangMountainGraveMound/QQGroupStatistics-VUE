@@ -115,31 +115,6 @@
         this.$store.commit('SET_TIME_GTE', "")
         this.$store.commit('SET_TIME_LTE', "")
       },
-      alertChangePassword() {
-        this.$Notice.warning({
-          title: '改个密码吧',
-          desc: '',
-          duration: 0,
-          render: h => {
-            return h('span', [
-              '默认密码总不好，改个密码好不好',
-              h('br'),
-              h('br'),
-              h('Button', {
-                props: {
-                  long: true,
-                  type: 'error'
-                },
-                on: {
-                  click: () => {
-                    this.$Notice.destroy()
-                  }
-                }
-              }, '滚')
-            ])
-          }
-        })
-      },
       handlePassword() {
         this.passwordModal = true
       },
@@ -161,13 +136,7 @@
       }
     },
     async mounted() {
-      let self = this
       this.$store.dispatch('authUser')
-      setTimeout(function () {
-        if (!self.$store.state.auth.user.password_changed) {
-          self.alertChangePassword()
-        }
-      }, 5000)
     }
   }
 </script>

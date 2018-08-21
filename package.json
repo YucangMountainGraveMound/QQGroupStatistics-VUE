@@ -17,7 +17,6 @@
     "iview": "^3.0.0",
     "jshashes": "^1.0.7",
     "moment": "^2.22.2",
-    "three": "^0.94.0",
     "v-tooltip": "latest",
     "viser-vue": "^2.2.5",
     "vue": "^2.5.2",
